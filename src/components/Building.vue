@@ -2,7 +2,7 @@
     <div class="content">
         <div class="building-block">
             <ul>
-                <li class="cursor">Cursor</li>
+                <li id="cursor">Cursor (5) <button v-if="cursor" @click="buyCursor">Buy</button></li>
             </ul>
         </div>
     </div>
@@ -10,7 +10,22 @@
 
 <script>
     export default {
-        name: 'Building'
+        name: 'Building',
+        computed: {
+            getCounter() {
+                return this.$store.state.count;
+            },
+            cursor() {
+                if (this.getCounter >= 5) {
+                    return true;
+                }
+            }
+        },
+        methods: {
+            buyCursor() {
+                this.$store.commit('decrement', 5)
+            }
+        }
     };
 </script>
 

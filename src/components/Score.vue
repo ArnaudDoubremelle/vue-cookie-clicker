@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: 'Score.vue',
+        name: 'Score',
         computed: {
             getCounter() {
                 return this.$store.state.count
