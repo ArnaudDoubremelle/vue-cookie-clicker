@@ -5,14 +5,22 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-      count: 0
+      count: 0,
+      cookiePerSecond: 0
   },
   mutations: {
-      increment (state) {
+      incrementCount (state, mount) {
+        if (mount > 0) {
+          state.count = state.count + mount
+        } else {
           state.count++
+        }
       },
-      decrement(state, mount) {
+      decrementCount(state, mount) {
           state.count = state.count - mount
+      },
+      incrementCookiePerSecond(state, mount) {
+          state.cookiePerSecond = state.cookiePerSecond + mount
       }
   },
   actions: {}

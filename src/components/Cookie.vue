@@ -17,7 +17,7 @@
         },
         methods: {
             increment() {
-                this.$store.commit('increment')
+                this.$store.commit('incrementCount')
             }
         }
     };
