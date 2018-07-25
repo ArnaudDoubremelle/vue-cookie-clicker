@@ -1,14 +1,25 @@
 <template>
     <div class="content">
         <div class="cookie-block">
-            <img class="cookie" src="../assets/cookie.png" alt="cookie">
+            <Score></Score>
+            <img class="cookie" @click="increment" src="../assets/cookie.png" alt="cookie">
         </div>
     </div>
 </template>
 
 <script>
+    import Score from './Score.vue';
+
     export default {
-        name: 'Cookie.vue'
+        name: 'Cookie',
+        components: {
+            Score
+        },
+        methods: {
+            increment() {
+                this.$store.commit('increment')
+            }
+        }
     };
 </script>
 
