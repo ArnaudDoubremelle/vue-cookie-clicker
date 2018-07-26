@@ -35,7 +35,7 @@
                 if (this.getCookiePerSecond > 0) {
                     this.$store.commit('incrementCount', this.getCookiePerSecond)
                 }
-            }.bind(this), 1000);
+            }.bind(this), 500);
         }
     };
 </script>
